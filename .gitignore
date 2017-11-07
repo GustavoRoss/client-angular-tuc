@@ -1,0 +1,7 @@
+.idea
+node_modules
+npm-debug.log
+_gitignore
+_DS_Store
+client/app/node_modules
+

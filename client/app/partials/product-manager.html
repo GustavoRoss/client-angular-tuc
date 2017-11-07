@@ -1,0 +1,46 @@
+<div class="container">
+    <h3 align="center">gerenciador de produtos</h3>
+    <div layout="column" ng-cloak>
+        <form ng-submit="$event.preventDefault()">
+            <md-input-container class="md-block">
+                <label>digite por código de barra ou descrição</label>
+                <input ng-model="inputData">
+            </md-input-container>
+            <section layout="row" layout-sm="column" layout-align="left" layout-wrap>
+                <md-button ng-click="findProducts()" class="md-raised md-primary">procurar</md-button>
+                <md-button ng-click="cleanProducts()" class="md-raised md-warn">limpar</md-button>
+                <md-button href="/novo" class="md-accent md-raised">novo</md-button>
+            </section>
+        </form>
+    </div>
+</div>
+<style>
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-gap: 20px;
+        align-items: stretch;
+    }
+</style>
+<div class="container">
+    <main class="grid">
+        <div class="parent" layout="column" ng-repeat="product in products" >
+            <md-card  md-theme="dark-blue">
+                <img height="150" width="150" src="http://3.bp.blogspot.com/-jf9gB1IY89c/VWTBGceH2cI/AAAAAAAAQ1w/wfDPnAg0ceI/s1600/yti76ii6i.jpg" class="md-card-image" alt="user avatar">
+                <md-card-content>
+                    <p>{{product.descricao}}</p>
+                    <p>{{product.codigoBarra}}</p>
+                    <p>{{product.valor | currency}}</p>
+                </md-card-content>
+                <div class="md-actions" layout="row" layout-align="end center">
+                    <md-button href="/produtos/edit/{{product.id}}">editar</md-button>
+                    <md-button ng-click="removeProduct($event, product)">deletar</md-button>
+                </div>
+            </md-card>
+        </div>
+    </main>
+</div>
+
+
+
+

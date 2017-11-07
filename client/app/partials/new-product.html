@@ -1,0 +1,27 @@
+<div class="container">
+    <h3 align="center">cadastro de produto</h3>
+    <form ng-submit="$event.preventDefault()">
+        <md-content class="md-no-momentum">
+            <md-input-container class="md-icon-float md-block">
+                <label>código de barras</label>
+                <input ng-model="product.codigoBarra" type="text">
+            </md-input-container>
+            <md-input-container class="md-icon-float md-block">
+                <label>descrição</label>
+                <input ng-model="product.descricao" type="text">
+            </md-input-container>
+            <md-input-container class="md-icon-float md-block">
+                <label>valor</label>
+                <input ng-model="product.valor" type="number">
+            </md-input-container>
+            <div align="center">
+                <md-button ng-click="saveProduct()" class="md-fab md-primary" title="salvar">
+                    <md-icon><i class="material-icons">{{iconAddOrEdit}}</i></md-icon>
+                </md-button>
+                <md-button href="/produtos" class="md-fab" title="cancelar">
+                    <md-icon><i class="material-icons">cancel</i></md-icon>
+                </md-button>
+            </div>
+        </md-content>
+    </form>
+</div>

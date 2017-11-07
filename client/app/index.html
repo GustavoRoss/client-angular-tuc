@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="tucApp" ng-controller="HomeController">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <title>WEB TUC</title>
+    <!-- ===============ESTILOS================================= -->
+    <link rel="stylesheet" href="vendor/basic.css">
+    <link rel="stylesheet" href="vendor/dropzone.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="node_modules/angular-material/angular-material.min.css">
+    <!-- ===============ESTILOS================================= -->
+
+
+    <!-- ===============SCRIPTS NECESSÁRIOS================================= -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular-route/angular-route.min.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.min.js"></script>
+    <script src="node_modules/angular-aria/angular-aria.min.js"></script>
+    <script src="node_modules/angular-messages/angular-messages.min.js"></script>
+    <script src="node_modules/angular-material/angular-material.min.js"></script>
+    <script src="node_modules/angular-resource/angular-resource.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.2.2/angular-materialize.min.js"></script>
+    <script src="vendor/dropzone.js"></script>
+    <!-- ===============SCRIPTS NECESSÁRIOS================================= -->
+
+
+    <script src="main.js"></script>
+    <!-- ===============ANGULAR CONTROLLERS================================= -->
+    <script src="controllers/product-manager-controller.js"></script>
+    <script src="controllers/home-controller.js"></script>
+    <script src="controllers/upload-controller.js"></script>
+    <script src="controllers/login-controller.js"></script>
+    <script src="controllers/form-product-controller.js"></script>
+    <script src="services/services.js"></script>
+    <!-- ===============ANGULAR CONTROLLERS================================= -->
+
+</head>
+<!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content">
+  <li><a href="/login">sair</a></li>
+</ul>
+<nav>
+  <div class="nav-wrapper blue lighten-1">
+    <a href="#" id="button-collapse" data-activates="slide-out" class="brand-logo">webtuc</a>
+    <ul class="right hide-on-med-and-down">
+      <!-- Dropdown Trigger -->
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown1">minha conta<i class="material-icons right">arrow_drop_down</i></a></li>
+    </ul>
+  </div>
+</nav>
+<ul id="slide-out" class="side-nav">
+    <li><div class="user-view">
+      <div class="background">
+        <img src="codigo-de-barras.png">
+      </div>
+    </div></li>
+    <li><a href="/produtos"><i class="material-icons">search</i>gerenciador de produtos</a></li>
+    <li><a href="/upload"><i  class="material-icons">import_export</i>fazer upload</a></li>
+    <li><div class="divider"></div></li>
+  </ul>
+    <main>
+        <ng-view></ng-view>
+    </main>
+  <script type="text/javascript">
+      $("#button-collapse").sideNav({
+        closeOnClick: true
+      });
+      $(".dropdown-button").dropdown();
+  </script>
+</body>
+</html>
